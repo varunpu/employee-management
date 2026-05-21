@@ -1,0 +1,24 @@
+{
+    "employees":[
+    {
+    "id":"1",
+    "firstName":"Varun",
+    "lastName":"PU",
+    "email":"varun@test.com",
+    "role":"ADMIN",
+    "status":"ACTIVE"
+    }
+    ],
+    
+    "accounts":[
+    {
+    "id":"1",
+    "employeeId":"1",
+    "accountNumber":"XXXX1234",
+    "accountType":"CHECKING",
+    "currency":"INR",
+    "balance":5000,
+    "status":"OPEN"
+    }
+    ]
+    }

@@ -1,0 +1,85 @@
+<div class="container">
+
+    <h2>Employee Management</h2>
+    
+    <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="filterEmployees()"
+    placeholder="Search employee"
+    />
+    
+    <button
+    (click)="createEmployee()"
+    >
+    Add Employee
+    </button>
+    
+    <table>
+    
+    <thead>
+    
+    <tr>
+    
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Status</th>
+    <th>Action</th>
+    
+    </tr>
+    
+    </thead>
+    
+    <tbody>
+    
+    <tr
+    *ngFor=
+    "let employee of filteredEmployees"
+    >
+    
+    <td>
+    {{employee.firstName}}
+    {{employee.lastName}}
+    </td>
+    
+    <td>
+    {{employee.email}}
+    </td>
+    
+    <td>
+    {{employee.role}}
+    </td>
+    
+    <td>
+    {{employee.status}}
+    </td>
+    
+    <td>
+    
+    <button
+    (click)="editEmployee(employee.id)"
+    >
+    Edit
+    </button>
+    
+    <button
+    (click)="deleteEmployee(employee.id)"
+    >
+    Delete
+    </button>
+    
+    </td>
+    
+    </tr>
+    
+    </tbody>
+    
+    </table>
+    
+    </div>
+
+    <app-employee-form
+[employee]="employee"
+(submitForm)="saveEmployee($event)"
+></app-employee-form>

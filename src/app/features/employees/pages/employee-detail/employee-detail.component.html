@@ -1,0 +1,11 @@
+<h2>Employee Details</h2>
+
+<app-employee-form
+[employee]="employee"
+(submitForm)="saveEmployee($event)"
+></app-employee-form>
+
+<app-account-list
+*ngIf="employee?.id"
+[employeeId]="employee.id"
+></app-account-list>
